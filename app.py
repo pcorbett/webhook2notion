@@ -16,14 +16,14 @@ def createNotionTask(token, collectionURL, content):
     row.title = content
 
 
-@app.route('/create_todo', methods=['GET'])
+@app.route('/create_client', methods=['GET'])
 def create_todo():
 
-    todo = request.args.get('todo')
+    client = request.args.get('client')
     token_v2 = os.environ.get("TOKEN")
     url = os.environ.get("URL")
-    createNotionTask(token_v2, url, todo)
-    return f'added {todo} to Notion'
+    createNotionTask(token_v2, url, client)
+    return f'added {client} to Notion'
 
 
 if __name__ == '__main__':
