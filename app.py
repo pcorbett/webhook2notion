@@ -18,7 +18,6 @@ def createNotionTask(token, collectionURL, content):
 
 @app.route('/add_client', methods=['GET'])
 def add_client():
-    dump()
     new_client = request.args.get('client')
     token_v2 = os.environ.get("TOKEN")
     url = os.environ.get("URL")
