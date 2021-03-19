@@ -14,7 +14,8 @@ def createNotionTask(token, collectionURL, content):
     cv = client.get_collection_view(collectionURL)
     row = cv.collection.add_row()
     row.client = content
-
+    row.name = content
+    
 
 @app.route('/add_client', methods=['GET'])
 def add_client():
