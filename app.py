@@ -16,7 +16,7 @@ def createNotionTask(token, collectionURL, content):
     row.title = content
 
 
-@app.route('/notion/client/add', methods=['GET'])
+@app.route('/add_client', methods=['GET'])
 def add_client():
 
     new_client = request.args.get('client')
