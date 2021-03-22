@@ -3,5 +3,9 @@
   "description": "Create a webhook where you can send todo's that will be added to your notion account",
   "repository": "https://git.heroku.com/nameless-scrubland-94978.git",
   "keywords": ["notion", "webhook", "notion-py"],
-  "WERKZEUG_DEBUG_PIN": { "required": true },
+  "env": {
+    "WERKZEUG_DEBUG_PIN": { 
+      "required": true 
+    }
+  }
 }
