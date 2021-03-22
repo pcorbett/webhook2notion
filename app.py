@@ -11,19 +11,16 @@ app = Flask(__name__)
 def createNotionTask(token, collectionURL, content):
     # notion
     client = NotionClient(token)
-    cv = client.get_collection_view(collectionURL)
+    cv = client.get_collection(collectionURL)
     row = cv.collection.add_row()
     row.client = content
-    row.name = content
-    print("row",row)
-    
+    row.name = content  
 
 @app.route('/add_client', methods=['GET'])
 def add_client():
     new_client = request.args.get('client')
     token_v2 = os.environ.get("TOKEN")
     url = os.environ.get("URL")
-    print("url",url,"new_client",new_client)
     createNotionTask(token_v2, url, new_client)
     return f'added {new_client} to Notion'
 
